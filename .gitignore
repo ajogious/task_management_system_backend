@@ -1,0 +1,36 @@
+# Java files
+*.class
+*.jar
+*.war
+
+# Gradle files
+.gradle/
+build/
+out/
+*.log
+*.class
+*.war
+
+# Maven files
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+
+# IDE and editor files
+.idea/
+*.iml
+*.classpath
+*.project
+.vscode/
+*.swp
+*.swo
+*.DS_Store
+
+# Local configuration files
+application.properties
+application.yml
+
+# Other files
+node_modules/

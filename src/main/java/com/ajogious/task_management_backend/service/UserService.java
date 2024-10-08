@@ -12,28 +12,27 @@ import lombok.RequiredArgsConstructor;
 @Service
 public class UserService {
 
-	private final UserRepo userRepo;
-	
-	private final PasswordEncoder passwordEncoder;  
-	
-	public User saveUser(User user) {
-		user.setPassword(passwordEncoder.encode(user.getPassword())); 
-		return userRepo.save(user);
-	}
+    private final UserRepo userRepo;
+    private final PasswordEncoder passwordEncoder;  
+    
+    public User saveUser(User user) {
+        user.setPassword(passwordEncoder.encode(user.getPassword())); 
+        
+        // Save user with avatar (if avatar URL is provided)
+        return userRepo.save(user);
+    }
 
-	public User findByEmail(String email) {
-		return userRepo.findByEmail(email);
-	}
+    public User findByEmail(String email) {
+        return userRepo.findByEmail(email);
+    }
 
-	public User authenticate(String email, String password) {
-	    User user = userRepo.findByEmail(email);
-	    
-	    if (user != null && passwordEncoder.matches(password, user.getPassword())) {
-	        return user;
-	    }
-	    
-	    return null; 
-	}
-
-
+    public User authenticate(String email, String password) {
+        User user = userRepo.findByEmail(email);
+        
+        if (user != null && passwordEncoder.matches(password, user.getPassword())) {
+            return user;
+        }
+        
+        return null; 
+    }
 }

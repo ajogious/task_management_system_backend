@@ -14,6 +14,7 @@ public class LoginResponse {
 	private String message;
 	private String username;
 	private Long userId;
+	private String avatar_url;
 	private LocalDateTime createdAt;
 
 }

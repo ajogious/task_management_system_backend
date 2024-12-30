@@ -129,7 +129,7 @@ claim as yours.
 
 ## Contact
 For questions or support, please contact:
-- **Name**: Ajogious
-- **Email**: ajogious.com
+- **Name**: Abdulmumuni Ajoge
+- **Email**: ajogious@gmail.com
 - **GitHub**: https://github.com/ajogious
 

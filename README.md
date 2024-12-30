@@ -84,7 +84,7 @@ The system supports user authentication, role-based access control, task trackin
 
 ## Usage
 1. Open the application in your browser:
-   - Frontend: `http://localhost:3000`
+   - Frontend: `http://localhost:5173`
    - Backend API: `http://localhost:8080`
 2. Register or log in to access the dashboard.
 3. Use the admin panel for user management.

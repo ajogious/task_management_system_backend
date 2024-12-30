@@ -11,6 +11,8 @@ out/
 *.class
 *.war
 
+application.properties/
+
 # Maven files
 target/
 pom.xml.tag

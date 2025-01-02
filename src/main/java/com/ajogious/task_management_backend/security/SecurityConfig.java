@@ -28,10 +28,13 @@ public class SecurityConfig {
         return http.csrf(csrf -> csrf.disable())
                 .cors(Customizer.withDefaults())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/register", "/api/auth/login")
+                        .requestMatchers("/api/auth/register", "/api/auth/login", "/uploads/**",
+                                "/api/auth/forgot-password",
+                                "/api/auth/reset-password")
                         .permitAll()
-                        .requestMatchers("/uploads/**").permitAll()
-                        .requestMatchers("/api/admin/dashboard/stats").hasAuthority("ADMIN")
+                        .requestMatchers("/api/admin/dashboard/stats")
+                        .hasAnyAuthority("ADMIN")
+                        .requestMatchers("/api/tasks/**").hasAnyAuthority("ADMIN", "USER")
                         .anyRequest().authenticated())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)

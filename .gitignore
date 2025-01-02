@@ -1,38 +1,55 @@
-# Java files
-*.class
-*.jar
-*.war
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
 
-# Gradle files
-.gradle/
-build/
-out/
-*.log
-*.class
-*.war
+# Eclipse
+.project
+.classpath
+.settings/
 
-application.properties/
-
-# Maven files
+# Maven
 target/
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
-pom.xml.next
+dependency-reduced-pom.xml
 
-# IDE and editor files
-.idea/
-*.iml
-*.classpath
-*.project
-.vscode/
+# Gradle
+.gradle/
+build/
+
+# Logs
+logs/
+*.log
+
+# Java specific files
+*.class
+*.jar
+*.war
+*.ear
+*.db
+*.h2.db
+*.hs_err_pid*
+
+# Environment variables
+.env
+
+# IDEs
 *.swp
 *.swo
-*.DS_Store
+*~
 
-# Local configuration files
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Sensitive data
 application.properties
 application.yml
 
-# Other files
-node_modules/
+# Database files
+*.sql
+*.db
+*.sqlite

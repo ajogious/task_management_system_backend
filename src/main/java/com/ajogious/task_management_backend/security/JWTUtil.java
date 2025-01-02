@@ -6,6 +6,9 @@ import javax.crypto.SecretKey;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
+
+import com.ajogious.task_management_backend.entities.User;
+
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
@@ -16,7 +19,7 @@ public class JWTUtil {
     @Value("${jwt.secret-key}")
     private String secretKey;
 
-    // Token blacklist
+    // Token blacklisting
     private final Set<String> blacklistedTokens = new HashSet<>();
 
     public String generateToken(String email) {
@@ -76,4 +79,16 @@ public class JWTUtil {
     public boolean isTokenBlacklisted(String token) {
         return blacklistedTokens.contains(token);
     }
+
+    @SuppressWarnings("deprecation")
+    public String generatePasswordResetToken(User user) {
+        return Jwts.builder()
+                .setSubject(user.getEmail())
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 30)) // 30 minutes expiry
+                .signWith(SignatureAlgorithm.HS512,
+                        secretKey)
+                .compact();
+    }
+
 }

@@ -67,7 +67,7 @@ public class UserController {
             status = HttpStatus.BAD_REQUEST;
         } else if (e instanceof IOException) {
             status = HttpStatus.INTERNAL_SERVER_ERROR;
-        } else if (e instanceof NoSuchElementException) { // Handles user not found scenarios
+        } else if (e instanceof NoSuchElementException) {
             status = HttpStatus.NOT_FOUND;
         }
 

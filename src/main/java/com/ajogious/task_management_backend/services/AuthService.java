@@ -35,7 +35,7 @@ public class AuthService {
 
     // Register a new user
     public User saveUser(User user, MultipartFile imageFile) throws IOException {
-        validateUserInputs(user); // Check duplicates
+        validateUserInputs(user); // Checking for duplicates
 
         user.setPassword(encodePassword(user.getPassword()));
         user.setImage(saveUserImage(user.getUsername(), imageFile));
@@ -124,23 +124,26 @@ public class AuthService {
             throw new IllegalArgumentException("Image file is required.");
         }
 
-        String userFolder = Paths.get(uploadDir, "users", username).toString();
+        // Create the user folder path inside upload directory
+        String userFolder = Paths.get(uploadDir, "users", username).toString(); // Absolute Path
         Path uploadPath = Paths.get(userFolder);
 
         if (!Files.exists(uploadPath)) {
-            Files.createDirectories(uploadPath);
+            Files.createDirectories(uploadPath); // Create folder if it doesn't exist
         }
 
+        // Save file
         String fileName = imageFile.getOriginalFilename();
         Path filePath = uploadPath.resolve(fileName);
 
-        // Handle file overwrite
+        // Overwrite existing file if present
         if (Files.exists(filePath)) {
             Files.delete(filePath);
         }
         Files.copy(imageFile.getInputStream(), filePath);
 
-        return Paths.get("users", username, fileName).toString(); // Return relative path
+        // **SAVE FULL PATH IN DATABASE**
+        return filePath.toString(); // Return the full absolute path
     }
 
     // Map User entity to DTO

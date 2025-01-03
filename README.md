@@ -1,10 +1,12 @@
 # Task Management System
 
 ## Overview
-The Task Management System is a web application designed to help users efficiently manage and organize their tasks. 
+
+The Task Management System is a web application designed to help users efficiently manage and organize their tasks.
 The system supports user authentication, role-based access control, task tracking, and provides a dashboard for statistical insights into tasks.
 
 ## Features
+
 - **User Management**:
   - Role-based access control (Admin, User).
   - Account activation, suspension, and deletion.
@@ -21,23 +23,28 @@ The system supports user authentication, role-based access control, task trackin
   - Pagination and configurable rows per page.
 
 ## Technologies Used
+
 ### Frontend
+
 - **React** (JavaScript library for building user interfaces)
 - **Axios** (HTTP client for API requests)
 - **Bootstrap** (CSS framework for responsive design)
 
 ### Backend
+
 - **Spring Boot** (Java framework for building RESTful APIs)
 - **JPA/Hibernate** (Object-relational mapping)
 - **MySQL** (Database for data storage)
 
 ### Security
+
 - **Spring Security** (User authentication and authorization)
 - **JWT** (JSON Web Tokens for secure user sessions)
 
 ## Installation
 
 ### Prerequisites
+
 1. **Backend**:
    - Ensure Java 17+ is installed.
    - Set up a MySQL database.
@@ -45,6 +52,7 @@ The system supports user authentication, role-based access control, task trackin
    - Ensure Node.js and npm are installed.
 
 ### Backend Setup
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/ajogious/task_management_system_backend.git
@@ -65,6 +73,7 @@ The system supports user authentication, role-based access control, task trackin
    ```
 
 ### Frontend Setup
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/ajogious/task_management_system_frontend.git
@@ -79,10 +88,11 @@ The system supports user authentication, role-based access control, task trackin
    ```
 4. Start the development server:
    ```bash
-   npm start
+   npm run dev
    ```
 
 ## Usage
+
 1. Open the application in your browser:
    - Frontend: `http://localhost:5173`
    - Backend API: `http://localhost:8080`
@@ -93,21 +103,25 @@ The system supports user authentication, role-based access control, task trackin
 ## API Endpoints
 
 ### User Management
+
 - `GET /api/auth/users` - Fetch users with pagination and search.
 - `PUT /api/auth/{userId}/suspend` - Suspend a user.
 - `PUT /api/auth/{userId}/activate` - Activate a user.
 - `DELETE /api/auth/user/{userId}` - Delete a user.
 
 ### Task Management
+
 - `GET /api/tasks` - Fetch all tasks.
 - `POST /api/tasks` - Create a new task.
 - `PUT /api/tasks/{taskId}` - Update a task.
 - `DELETE /api/tasks/{taskId}` - Delete a task.
 
 ### Dashboard
+
 - `GET /api/dashboard/stats/{userId}` - Fetch task statistics for a user.
 
 ## Contributing
+
 1. Fork the repository.
 2. Create a new branch for your feature:
    ```bash
@@ -124,12 +138,14 @@ The system supports user authentication, role-based access control, task trackin
 5. Submit a pull request.
 
 ## License
-This project belong to me. You can use it in your resume and your other activities but don't 
+
+This project belong to me. You can use it in your resume and your other activities but don't
 claim as yours.
 
 ## Contact
+
 For questions or support, please contact:
+
 - **Name**: Abdulmumuni Ajoge
 - **Email**: ajogious@gmail.com
 - **GitHub**: https://github.com/ajogious
-

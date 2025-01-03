@@ -32,9 +32,10 @@ public class SecurityConfig {
                                 "/api/auth/forgot-password",
                                 "/api/auth/reset-password")
                         .permitAll()
-                        .requestMatchers("/api/admin/dashboard/stats")
+                        .requestMatchers("/api/admin/**")
                         .hasAnyAuthority("ADMIN")
-                        .requestMatchers("/api/tasks/**").hasAnyAuthority("ADMIN", "USER")
+                        .requestMatchers("/api/tasks/**", "/api/users", "/api/dashboard/**")
+                        .hasAnyAuthority("ADMIN", "USER")
                         .anyRequest().authenticated())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)

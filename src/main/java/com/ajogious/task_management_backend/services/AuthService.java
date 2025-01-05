@@ -38,7 +38,7 @@ public class AuthService {
 
     // Register a new user
     public User saveUser(User user, MultipartFile imageFile) throws IOException {
-        validateUserInputs(user); // Checking for duplicates
+        validateUserInputs(user);
 
         user.setPassword(encodePassword(user.getPassword()));
         user.setImage(saveUserImage(user.getUsername(), imageFile));
@@ -146,7 +146,7 @@ public class AuthService {
         Files.copy(imageFile.getInputStream(), filePath);
 
         // **SAVE FULL PATH IN DATABASE**
-        return filePath.toString(); // Return the full absolute path
+        return filePath.toString();
     }
 
     // Map User entity to DTO

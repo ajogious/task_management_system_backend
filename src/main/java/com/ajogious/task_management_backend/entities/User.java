@@ -47,7 +47,7 @@ public class User {
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    private Role role = Role.USER;
+    private Role role = Role.ADMIN;
 
     @Column(nullable = false)
     private boolean isActive = true;
@@ -60,7 +60,7 @@ public class User {
     public void prePersist() {
         this.created = LocalDateTime.now();
         if (role == null) {
-            this.role = Role.USER;
+            this.role = Role.ADMIN;
         }
     }
 

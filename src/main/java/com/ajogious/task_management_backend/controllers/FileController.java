@@ -13,6 +13,7 @@ import java.nio.file.*;
 @RestController
 @RequestMapping("/uploads")
 public class FileController {
+
     @Value("${file.upload-dir}")
     private String uploadDir;
 

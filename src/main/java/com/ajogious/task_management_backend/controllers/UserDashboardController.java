@@ -7,7 +7,6 @@ import com.ajogious.task_management_backend.services.UserDashboardService;
 
 import lombok.*;
 
-@CrossOrigin
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/dashboard")

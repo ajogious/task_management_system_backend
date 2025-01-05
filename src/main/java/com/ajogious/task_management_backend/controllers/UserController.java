@@ -13,7 +13,6 @@ import com.ajogious.task_management_backend.services.UserService;
 
 import lombok.*;
 
-@CrossOrigin
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/users")

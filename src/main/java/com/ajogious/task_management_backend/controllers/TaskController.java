@@ -17,7 +17,6 @@ import com.ajogious.task_management_backend.services.TaskService;
 
 import lombok.*;
 
-@CrossOrigin
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/tasks")

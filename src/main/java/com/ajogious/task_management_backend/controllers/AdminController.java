@@ -9,7 +9,6 @@ import com.ajogious.task_management_backend.services.*;
 
 import lombok.*;
 
-@CrossOrigin
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/admin")

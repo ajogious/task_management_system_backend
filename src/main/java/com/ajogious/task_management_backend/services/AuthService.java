@@ -33,6 +33,9 @@ public class AuthService {
     @Value("${file.upload-dir}")
     private String uploadDir;
 
+    @Value("${frontend.url}")
+    private String frontendUrl;
+
     // Register a new user
     public User saveUser(User user, MultipartFile imageFile) throws IOException {
         validateUserInputs(user); // Checking for duplicates
@@ -54,7 +57,7 @@ public class AuthService {
     public void initiatePasswordReset(String email) {
         User user = fetchUserByEmail(email);
         String token = jwtUtil.generatePasswordResetToken(user);
-        String resetLink = "http://localhost:5173/reset-password?token=" + token;
+        String resetLink = frontendUrl + "/reset-password?token=" + token;
         emailService.sendPasswordResetEmail(email, resetLink);
     }
 

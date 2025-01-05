@@ -12,12 +12,14 @@ import com.ajogious.task_management_backend.entities.User;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 @Service
 public class JWTUtil {
 
     @Value("${jwt.secret-key}")
-    private String secretKey;
+    private final String secretKey;
 
     // Token blacklisting
     private final Set<String> blacklistedTokens = new HashSet<>();

@@ -46,8 +46,8 @@ logs/
 Thumbs.db
 
 # Sensitive data
-application.properties
-application.yml
+# application.properties
+# application.yml
 
 # Database files
 *.sql

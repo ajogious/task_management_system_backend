@@ -34,7 +34,7 @@ logs/
 *.hs_err_pid*
 
 # Environment variables
-.env
+.env/
 
 # IDEs
 *.swp
